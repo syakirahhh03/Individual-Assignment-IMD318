@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Personal Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+	*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	}
+
+body {
+
+  	background-image: url('anime.jpg');
+  	background-repeat: no-repeat;
+  	background-attachment: fixed;
+  	background-size: 100% ;
+	}
+
+
+header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 50px;
+      background-color: grey;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;  /*Pastikan header di atas iframe */
+    }
+
+header nav a {
+      margin: 15px;
+      color: #F5FFFA;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      color: #007BFF;
+    }
+
+.hero {
+      text-align: center;
+      padding: 100px;
+      background-image: url('img_index.jpg');
+      background-size: 500px;
+      background-position: right;
+      color: white;
+      border: 2px solid #2F4F4F;
+      height: 605px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 2rem;
+    }
+
+#txt{
+      font-size: 35px; 
+      font-weight: bold; 
+      color: white; 
+    }
+
+
+ol {
+      list-style-position: inside; 
+      display: inline-block; 
+      text-align: left; 
+      padding: 0;
+      margin-top:10px;
+    }
+
+    ol li {
+      text-align: left; 
+      margin-bottom:10px;
+    }
+
+footer {
+      background-color: grey;
+      text-align: center;
+      padding: 5px;
+      color: white;
+      font-family: Arial, sans-serif;
+      font-size: 0.9rem;
+    }
+
+</style>
+</head>
+
+<body>
+<header>
+<nav>
+	<a href="index.html">Home</a>
+  	<a href="biodata.html">Biodata</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="education.html">Education</a>
+        <a href="interest.html">Interest</a>
+        <a href="gallery.html">Gallery</a>
+</nav>
+</header> 
+
+<section class="hero">
+<div class="hero-content">
+<body onload="startTime()">
+
+
+<div id="txt"></div>
+
+<script>
+function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script>
+
+	<p><h1 style="text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6); color:white;">Welcome to My Website</h1>
+  	<p><b><h3 style="color:black;">Hii, I'm Nurul Syakirah&#128150;</b></p>
+	<p><h3 style="color:black;">Use the links below to explore:</p>
+  <ol>
+  <p>
+	<i><li><a href="index.html">Home</a></li></i>
+        <i><li><a href="biodata.html">Biodata</a></li></i>
+        <i><li><a href="experiences.html">Experiences</a></li></i>
+        <i><li><a href="education.html">Education</a></li></i>
+        <i><li><a href="interest.html">Interest</a></li></i>
+        <i><li><a href="gallery.html">Gallery</a></li></i>
+
+   </p>
+   </ol>
+
+<p>
+<center><b style="color: white">Thank you for visiting my page!</center></b>
+</p>
+
+</div>
+</section>
+
+<footer>
+
+    <p>Copyright Reserved & Copy 2024. Nurul Syakirah binti Mohammad Sabri.</p>
+
+</footer>
+
+</body>
+</html>
